@@ -11,7 +11,7 @@ import { MyApp } from './app.component';
 // *.6 descargo librerías de angular/firebase 
 // npm install angularfire2 firebase promise-polyfill --save
 // npm install rxjs@6 rxjs-compat@6 promise-polyfill --save
-// npm install rxjs@6 rxjs-compat@6 promise-polyfill --save
+// npm install rxjs@6.0 rxjs-compat --save
 //esta última linea para bajar rxjs a v6.0 porque la 6.3.3 funciona mal
 
 @NgModule({
