@@ -3,12 +3,14 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  // *.1 borro la carpeta home y genero una nueva con >ionic g page home
+  // *.2 lazy-loading cambio la siguiente linea poniendo cadena "HomePage"
+  // *.3 elimino el import de HomePage arriba
+  rootPage:any = "HomePage";
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
