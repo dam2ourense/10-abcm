@@ -37,4 +37,13 @@ export class EditItemPage {
           }
           )
   }
+
+  // *.40
+  borrarItem(item:ShoppingItem){
+    this.servicioListaCompra.deleteItem(item)
+        .then (()=>{
+          this.navCtrl.setRoot("HomePage");
+        }
+        )
+  }
 }

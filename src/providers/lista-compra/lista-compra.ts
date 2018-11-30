@@ -29,4 +29,9 @@ export class ListaCompraProvider {
   editItem(item:ShoppingItem){
     return this.refListaCompra.update(item.key, item);
   }
+
+  // *.39
+  deleteItem(item:ShoppingItem){
+    return this.refListaCompra.remove (item.key);
+  }
 }

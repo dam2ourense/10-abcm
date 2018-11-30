@@ -8,6 +8,7 @@
 </ion-header>
 
  <!-- *.34 mostramos y editamos la info de un item -->
+ <!-- *.38 botón borrar -->
 <ion-content padding>
   <ion-item>
     <ion-label>Nombre</ion-label>
@@ -22,4 +23,5 @@
     <ion-input [(ngModel)]="item.price" type="number" ></ion-input>
   </ion-item>
   <button ion-button block clear (click)="guardarItem(item)">Guardar</button>
+  <button ion-button block clear color="danger" (click)="borrarItem(item)">Eliminar</button>
 </ion-content>
