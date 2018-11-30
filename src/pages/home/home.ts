@@ -28,6 +28,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private shopping: ListaCompraProvider) {
+
+    // *.28 referencia https://github.com/angular/angularfire2/blob/master/docs/rtdb/lists.md
     this.listaCompra = this.shopping
         .getItemList()  //devuelve la DB LIST
         .snapshotChanges() //valores
@@ -38,15 +40,16 @@ export class HomePage {
                 ...c.payload.val(),
               }
             )
-
             )
         }
         )
         )
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+  // *.31 método que atiende el evento click
+  selectShoppingItem(shoppingItem:ShoppingItem){
+    this.navCtrl.push("EditItemPage", {"item": shoppingItem});
   }
+
 
 }

@@ -17,5 +17,14 @@
 
 
 <ion-content padding>
-
+  <!-- *.29 repetir  -->
+   <!-- *.30 (primero creaamos págian ionic g page edit-item) boton a SetectItem() -->
+  <ion-list>
+    <ion-item *ngFor="let item of listaCompra | async"
+              (click)="selectShoppingItem(item)">
+      <h1><b>{{item.name}} </b></h1>
+      <h3>Cantiadad: {{item.quantity}}</h3>
+      <h3>Precio: {{item.price}}</h3>
+    </ion-item>
+  </ion-list>
 </ion-content>
