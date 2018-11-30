@@ -19,4 +19,9 @@ export class ListaCompraProvider {
   addItem(item:ShoppingItem){
     return this.refListaCompra.push(item);
   }
+
+  // *.24 
+  getItemList(){
+    return this.refListaCompra;
+  }
 }
