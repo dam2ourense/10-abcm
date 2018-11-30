@@ -24,4 +24,9 @@ export class ListaCompraProvider {
   getItemList(){
     return this.refListaCompra;
   }
+
+  // *.35
+  editItem(item:ShoppingItem){
+    return this.refListaCompra.update(item.key, item);
+  }
 }

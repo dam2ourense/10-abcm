@@ -1,18 +1,25 @@
-<!--
-  Generated template for the EditItemPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+<!-- *.34 preparo encabezado -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>edit-item</ion-title>
+  <ion-navbar color ="primary">
+    <ion-title>{{item.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
+ <!-- *.34 mostramos y editamos la info de un item -->
 <ion-content padding>
-
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="item.name" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Cantidad</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label>Precio</ion-label>
+    <ion-input [(ngModel)]="item.price" type="number" ></ion-input>
+  </ion-item>
+  <button ion-button block clear (click)="guardarItem(item)">Guardar</button>
 </ion-content>

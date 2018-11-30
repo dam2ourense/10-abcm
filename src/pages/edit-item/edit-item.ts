@@ -1,3 +1,5 @@
+import { ListaCompraProvider } from './../../providers/lista-compra/lista-compra';
+import { ShoppingItem } from './../../models/shopping-item/shopping-item.inteface';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,11 +17,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditItemPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // *.32 añadir el item
+  item : ShoppingItem;
+
+  // *.36 inyecto el servicio
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private servicioListaCompra: ListaCompraProvider) {
+    console.log(navParams.get("item") );
+    // *.33 asignamos los datos que me llegan
+    this.item = navParams.get ("item");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EditItemPage');
+  // *.37
+  guardarItem(item:ShoppingItem){
+    this.servicioListaCompra.editItem(item)
+          .then(()=>{
+            this.navCtrl.setRoot("HomePage");
+          }
+          )
   }
-
 }
